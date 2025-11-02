@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #f2f2f2, #e0eafc);
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  max-width: 640px;
+  width: 100%;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.pokemon-card {
+  margin-top: 24px;
+  text-align: center;
+  padding: 16px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pokemon-card h2 {
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.pokemon-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.pokemon-error {
+  color: crimson;
+  margin-top: 24px;
+  font-weight: bold;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 60%;
+  max-width: 300px;
+}
+
+.search-button {
+  padding: 10px 16px;
+  font-size: 16px;
+  background-color: #071bd4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.search-button:hover {
+  background-color: #1861e8;
+}

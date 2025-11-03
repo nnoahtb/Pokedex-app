@@ -4,9 +4,12 @@ public class ExceptionHandlingMiddleware(RequestDelegate _next, ILogger<Exceptio
 {
     public async Task InvokeAsync(HttpContext context)
     {
+        _logger.LogInformation("Handling request: {Method} {Path}", context.Request.Method, context.Request.Path);
+
         try
         {
             await _next(context);
+            _logger.LogInformation("Finished handling request. Status Code: {StatusCode}", context.Response.StatusCode);
         }
         catch (Exception ex)
         {

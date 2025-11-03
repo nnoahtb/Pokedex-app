@@ -13,7 +13,7 @@ public class ExceptionHandlingMiddleware(RequestDelegate _next, ILogger<Exceptio
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "An unhandled exception occurred");
+            _logger.LogError(ex, "An unhandled exception occurred {Method} {Path}", context.Request.Method, context.Request.Path);
             context.Response.ContentType = "application/json";
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
 
@@ -23,6 +23,8 @@ public class ExceptionHandlingMiddleware(RequestDelegate _next, ILogger<Exceptio
             };
 
             await context.Response.WriteAsJsonAsync(response);
+
+            _logger.LogInformation("Returned 500 response for: {Method} {Path}", context.Request.Method, context.Request.Path);
         }
     }
 }
